@@ -7,7 +7,7 @@ import torch
 class SteerableLLM(nn.Module):
     def __init__(
         self, 
-        model_name: str = "/workingdir/ksharma323/llama7b",
+        model_name: str = "meta-llama/Llama-2-7b-hf",
         steering_layer_indices: List[int] = [10],
         temperature: float = 0.7,
     ):
