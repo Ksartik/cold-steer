@@ -1,6 +1,6 @@
 # COLD-Steer: Steering Large Language Models via in-Context One Step Learning Dynamics
 
-Short README to help contributors get started with the codebase.
+Supplementary code for an under review work, COLD-Steer: Steering Large Language Models via in-Context One Step Learning Dynamics to help contributors get started with the codebase. Reach out to `ksartik@gatech.edu` in case of any issues.
 
 ## Quick overview
 - Purpose: research on steering large causal LMs via intervention-style updates and inference-time hooks. Key capabilities: dataset-driven SFT/DPO-style training and steer-at-inference interventions.
@@ -91,9 +91,9 @@ class NewSteerer(BaseSteerer):
 
 ## Citation
 
-> @inproceedings{
-> sharma2025coldsteer,
-> title={{COLD}-Steer: Steering Large Language Models via In-Context One-step Learning Dynamics},
-> author={Sharma, Kartik and Trivedi, Rakshit},
-> year={2025},
+> @inproceedings{\
+> sharma2025coldsteer,\
+> title={{COLD}-Steer: Steering Large Language Models via In-Context One-step Learning Dynamics},\
+> author={Sharma, Kartik and Trivedi, Rakshit},\
+> year={2025},\
 > }
