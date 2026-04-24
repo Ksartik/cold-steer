@@ -1,6 +1,8 @@
 # COLD-Steer: Steering Large Language Models via in-Context One Step Learning Dynamics
 
-Supplementary code for an under review work, COLD-Steer: Steering Large Language Models via in-Context One Step Learning Dynamics to help contributors get started with the codebase. Reach out to `ksartik@gatech.edu` in case of any issues.
+Supplementary code for COLD-Steer: Steering Large Language Models via in-Context One Step Learning Dynamics published at ICLR 2026. [Link](https://openreview.net/forum?id=afV4qzquBN)
+
+This is to help contributors get started with the codebase. Please reach out to `ksartik@gatech.edu` in case of any issues.
 
 ## Quick overview
 - Purpose: research on steering large causal LMs via intervention-style updates and inference-time hooks. Key capabilities: dataset-driven SFT/DPO-style training and steer-at-inference interventions.
@@ -8,6 +10,7 @@ Supplementary code for an under review work, COLD-Steer: Steering Large Language
   - `src/llm.py` — `SteerableLLM` wrapper around HuggingFace models; provides `generate`, `functional_forward`, `register_steering_hooks`, and PEFT integration.
   - `src/steerer.py` — implementations of steering algorithms and training loops (e.g., `LossFDSteerer`, `LossFDThreshSteerer`). These classes register forward hooks into `SteerableLLM` layers to modify activations.
   - `src/dataset.py` — dataset classes: `CAADataset`, `BiPODataset`, `AxBenchDataset`, `OpinionsQADataset`. They produce tensors named like `prompt_input_ids`, `prompt_attention_mask`, and label variations (`matching_*`, `not_matching_*`).
+  - `src/dataset_icl.py`, `src/dataset_llama.py` — dataset classes for the in-context learning baseline and llama model results in the paper (uses a slightly different formatting more suitable for Llama-2-7b).
   - `test.py` — Hydra entrypoint that instantiates the `steerer` and `dataset` from `configs/` and runs training/testing loops.
 
 ## Project layout (important files)
@@ -92,8 +95,10 @@ class NewSteerer(BaseSteerer):
 ## Citation
 
 > @inproceedings{\
-> sharma2025coldsteer,\
+> sharma2026coldsteer,\
 > title={{COLD}-Steer: Steering Large Language Models via In-Context One-step Learning Dynamics},\
-> author={Sharma, Kartik and Trivedi, Rakshit},\
-> year={2025},\
+> author={Kartik Sharma and Rakshit Trivedi},\
+> booktitle={The Fourteenth International Conference on Learning Representations},\
+> year={2026},\
+> url={https://openreview.net/forum?id=afV4qzquBN},\
 > }
